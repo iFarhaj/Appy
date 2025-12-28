@@ -1,9 +1,8 @@
-import localFont from 'next/font/local'; // وارد کردن ماژول فونت محلی
+import localFont from 'next/font/local';
 import './globals.css';
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 
-// تعریف فونت یکان بخ با وزن‌های مختلف
 const yekanBakh = localFont({
   src: [
     {

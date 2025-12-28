@@ -14,8 +14,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const mainContentMargin = isMobileOpen
     ? 'ms-0'
     : isExpanded || isHovered
-      ? 'lg:ms-[290px]'
-      : 'lg:ms-[90px]';
+      ? 'lg:mr-[290px] rtl:lg:mr-[290px] ltr:lg:ml-[290px]'
+      : 'lg:mr-[90px] rtl:lg:mr-[90px] ltr:lg:ml-[90px]';
 
   return (
     <div className="min-h-screen xl:flex">
@@ -27,7 +27,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         {/* Header */}
         <AppHeader />
         {/* Page Content */}
-        <div className="mx-auto max-w-(--breakpoint-2xl) p-4 md:p-6">{children}</div>
+        <div className="mx-auto max-w-(--breakpoint-2xl)! p-4 md:p-6">{children}</div>
       </div>
     </div>
   );

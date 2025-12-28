@@ -3,15 +3,12 @@ import React from 'react';
 import {
   PiUsersThree,
   PiRobot,
-  PiArrowUpRight,
-  PiArrowDownRight,
   PiCheckCircle,
   PiChartLineUp,
   PiWarningCircle,
   PiUserPlus,
   PiCrown,
   PiCalendarCheck,
-  PiLightning,
 } from 'react-icons/pi';
 import ComponentCard from '@/components/common/ComponentCard';
 
