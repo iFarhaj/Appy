@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import { Dropdown, type DropdownProps, type MenuProps } from "antd";
-import { twMerge } from "tailwind-merge";
+'use client';
+import React from 'react';
+import { Dropdown, type DropdownProps, type MenuProps } from 'antd';
+import { twMerge } from 'tailwind-merge';
 
 interface AntDropdownProps extends DropdownProps {
-  menuItems: MenuProps["items"];
+  menuItems: MenuProps['items'];
   triggerButton: React.ReactNode;
   // dropdownClassName?: string;
   contentClassName?: string;
@@ -19,12 +19,17 @@ export default function AntDropdown({
   return (
     <Dropdown
       menu={{ items: menuItems }}
-      trigger={["click"]}
+      trigger={['click']}
       placement="top"
       {...rest}
       getPopupContainer={(trigger) => trigger.parentNode as HTMLElement}
       popupRender={(menu) => (
-        <div className={twMerge('w-[300px] rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800', contentClassName)}>
+        <div
+          className={twMerge(
+            'w-[300px] rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800',
+            contentClassName
+          )}
+        >
           {menu}
         </div>
       )}

@@ -1,14 +1,14 @@
-import GridShape from "@/components/common/GridShape";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import GridShape from '@/components/common/GridShape';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 export default function NotFound() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden z-1">
+    <div className="relative z-1 flex min-h-screen flex-col items-center justify-center overflow-hidden p-6">
       <GridShape />
       <div className="mx-auto w-full max-w-[242px] text-center sm:max-w-[472px]">
-        <h1 className="mb-8 font-bold text-gray-800 text-title-md dark:text-white/90 xl:text-title-2xl">
+        <h1 className="text-title-md xl:text-title-2xl mb-8 font-bold text-gray-800 dark:text-white/90">
           صفحه مورد نظر یافت نشد!
         </h1>
 
@@ -27,19 +27,19 @@ export default function NotFound() {
           height={152}
         />
 
-        <p className="mt-10 mb-6 text-base text-gray-700 dark:text-gray-400 sm:text-lg">
+        <p className="mt-10 mb-6 text-base text-gray-700 sm:text-lg dark:text-gray-400">
           به نظر نمی رسد صفحه مورد نظر شما را پیدا کنیم!
         </p>
 
         <Link
           href="/"
-          className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/3 dark:hover:text-gray-200"
+          className="shadow-theme-xs inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/3 dark:hover:text-gray-200"
         >
           برگشت به صفحه اصلی
         </Link>
       </div>
       {/* <!-- Footer --> */}
-      <p className="absolute text-sm text-center text-gray-500 -translate-x-1/2 bottom-6 left-1/2 dark:text-gray-400">
+      <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-sm text-gray-500 dark:text-gray-400">
         &copy; {new Date().getFullYear()} - بات‌وات
       </p>
     </div>

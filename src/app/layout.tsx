@@ -55,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl"> 
+    <html lang="fa" dir="rtl">
       <body className={`${yekanBakh.className} font-sans dark:bg-gray-900`}>
         <ThemeProvider>
           <SidebarProvider>{children}</SidebarProvider>

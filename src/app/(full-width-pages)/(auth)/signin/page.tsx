@@ -1,9 +1,9 @@
-import SignInForm from "@/components/auth/SignInForm";
-import { Metadata } from "next";
+import SignInForm from '@/components/auth/SignInForm';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "ورود | بات‌وات",
-  description: "",
+  title: 'ورود | بات‌وات',
+  description: '',
 };
 
 export default function SignIn() {

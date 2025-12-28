@@ -1,92 +1,90 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { type MenuProps } from "antd";
-import AntDropdown from "../ui/AntDropdown"; // Import the new AntDropdown component
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { type MenuProps } from 'antd';
+import AntDropdown from '../ui/AntDropdown'; // Import the new AntDropdown component
 
 const notifications = [
   {
     id: 1,
-    user: "Terry Franci",
-    image: "/images/user/user-02.jpg",
-    message: "requests permission to change Project - Nganter App",
-    time: "5 min ago",
-    category: "Project",
-    statusColor: "bg-success-500",
+    user: 'Terry Franci',
+    image: '/images/user/user-02.jpg',
+    message: 'requests permission to change Project - Nganter App',
+    time: '5 min ago',
+    category: 'Project',
+    statusColor: 'bg-success-500',
   },
   {
     id: 2,
-    user: "Alena Franci",
-    image: "/images/user/user-03.jpg",
-    message: "requests permission to change Project - Nganter App",
-    time: "8 min ago",
-    category: "Project",
-    statusColor: "bg-success-500",
+    user: 'Alena Franci',
+    image: '/images/user/user-03.jpg',
+    message: 'requests permission to change Project - Nganter App',
+    time: '8 min ago',
+    category: 'Project',
+    statusColor: 'bg-success-500',
   },
   {
     id: 3,
-    user: "Jocelyn Kenter",
-    image: "/images/user/user-04.jpg",
-    message: "requests permission to change Project - Nganter App",
-    time: "15 min ago",
-    category: "Project",
-    statusColor: "bg-success-500",
+    user: 'Jocelyn Kenter',
+    image: '/images/user/user-04.jpg',
+    message: 'requests permission to change Project - Nganter App',
+    time: '15 min ago',
+    category: 'Project',
+    statusColor: 'bg-success-500',
   },
   {
     id: 4,
-    user: "Brandon Philips",
-    image: "/images/user/user-05.jpg",
-    message: "requests permission to change Project - Nganter App",
-    time: "1 hr ago",
-    category: "Project",
-    statusColor: "bg-error-500",
+    user: 'Brandon Philips',
+    image: '/images/user/user-05.jpg',
+    message: 'requests permission to change Project - Nganter App',
+    time: '1 hr ago',
+    category: 'Project',
+    statusColor: 'bg-error-500',
   },
 ];
 
 export default function NotificationDropdown() {
   const [notifying, setNotifying] = useState(true);
 
-  const items: MenuProps["items"] = [
-    { 
-      key: "header", 
-      type: "group", 
+  const items: MenuProps['items'] = [
+    {
+      key: 'header',
+      type: 'group',
       label: (
-        <div className="flex items-center justify-between pb-3 mb-1 border-b border-gray-100 dark:border-gray-700">
-          <h5 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-            Notification
-          </h5>
+        <div className="mb-1 flex items-center justify-between border-b border-gray-100 pb-3 dark:border-gray-700">
+          <h5 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Notification</h5>
         </div>
       ),
     },
     ...notifications.map((notification) => ({
-      key: notification.id.toString(), 
+      key: notification.id.toString(),
       label: (
         <div className="flex items-start gap-3 p-1 whitespace-normal">
-          <div className="relative shrink-0 w-10 h-10 rounded-full">
+          <div className="relative h-10 w-10 shrink-0 rounded-full">
             <Image
               width={40}
               height={40}
               src={notification.image}
               alt={notification.user}
-              className="w-full h-full overflow-hidden rounded-full object-cover"
+              className="h-full w-full overflow-hidden rounded-full object-cover"
             />
             <span
-              className={`absolute bottom-0 end-0 z-10 h-2.5 w-2.5 rounded-full border-[1.5px] border-white ${notification.statusColor} dark:border-gray-900`}
+              className={`absolute end-0 bottom-0 z-10 h-2.5 w-2.5 rounded-full border-[1.5px] border-white ${notification.statusColor} dark:border-gray-900`}
             ></span>
           </div>
 
           <div className="flex flex-col">
-            <p className="mb-1 text-theme-sm text-gray-500 dark:text-gray-400 leading-snug">
-              <span className="font-medium text-gray-800 dark:text-white/90 me-1">
+            <p className="text-theme-sm mb-1 leading-snug text-gray-500 dark:text-gray-400">
+              <span className="me-1 font-medium text-gray-800 dark:text-white/90">
                 {notification.user}
               </span>
               {notification.message}
             </p>
 
-            <div className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
+            <div className="text-theme-xs flex items-center gap-2 text-gray-500 dark:text-gray-400">
               <span>{notification.category}</span>
-              <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
+              <span className="h-1 w-1 rounded-full bg-gray-400"></span>
               <span>{notification.time}</span>
             </div>
           </div>
@@ -94,11 +92,11 @@ export default function NotificationDropdown() {
       ),
     })),
     {
-      key: "footer",
+      key: 'footer',
       label: (
         <Link
           href="/"
-          className="block px-4 py-2 mt-2 text-sm font-medium text-center text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
+          className="mt-2 block rounded-lg border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
         >
           View All Notifications
         </Link>
@@ -110,12 +108,12 @@ export default function NotificationDropdown() {
     <div className="relative">
       <AntDropdown
         menuItems={items}
-        triggerButton={(
-          <button className="relative flex items-center justify-center text-gray-500 transition-colors bg-white border border-gray-200 rounded-full hover:text-gray-700 h-11 w-11 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">
+        triggerButton={
+          <button className="relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white">
             <span
-              className={`absolute right-0 top-0.5 z-10 h-2 w-2 rounded-full bg-orange-400 ${!notifying ? "hidden" : "flex"}`}
+              className={`absolute top-0.5 right-0 z-10 h-2 w-2 rounded-full bg-orange-400 ${!notifying ? 'hidden' : 'flex'}`}
             >
-              <span className="absolute inline-flex w-full h-full bg-orange-400 rounded-full opacity-75 animate-ping"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
             </span>
             <svg
               className="fill-current"
@@ -132,7 +130,7 @@ export default function NotificationDropdown() {
               />
             </svg>
           </button>
-        )}
+        }
         onOpenChange={(open) => {
           if (open) setNotifying(false);
         }}
