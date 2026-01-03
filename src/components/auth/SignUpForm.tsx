@@ -15,7 +15,7 @@ export default function SignUpForm() {
   // مرحله اول: تایید نام کسب‌وکار و شماره موبایل
   const handleNextStep = async () => {
     try {
-      await form.validateFields(['companyId', 'username']);
+      await form.validateFields(['companyName', 'mobile']);
       setStep('password');
     } catch (error) {
       // خطاها توسط آنت دیزاین نمایش داده می‌شوند
@@ -107,7 +107,7 @@ export default function SignUpForm() {
                 transition={{ duration: 0.3 }}
               >
                 <Form.Item
-                  name="companyId"
+                  name="companyName"
                   label={<span className="font-semibold dark:text-gray-300">نام کسب‌وکار</span>}
                   rules={[{ required: true, message: 'نام کسب‌وکار الزامی است' }]}
                 >
@@ -118,7 +118,7 @@ export default function SignUpForm() {
                 </Form.Item>
 
                 <Form.Item
-                  name="username"
+                  name="mobile"
                   label={<span className="font-semibold dark:text-gray-300">شماره موبایل</span>}
                   rules={[
                     { required: true, message: 'شماره موبایل الزامی است' },

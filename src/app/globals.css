@@ -106,6 +106,354 @@
   }
 }
 
+@import 'tailwindcss';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* --- تنظیمات فونت پروژه --- */
+  --font-*: initial;
+  --font-sans: var(--font-yekan-bakh), ui-sans-serif, system-ui;
+  --font-outfit: var(--font-yekan-bakh);
+
+  /* --- بریک‌پوینت‌ها --- */
+  --breakpoint-*: initial;
+  --breakpoint-2xsm: 375px;
+  --breakpoint-xsm: 425px;
+  --breakpoint-3xl: 2000px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* --- تایپوگرافی --- */
+  --text-title-2xl: 72px;
+  --text-title-2xl--line-height: 90px;
+  --text-title-xl: 60px;
+  --text-title-xl--line-height: 72px;
+  --text-title-lg: 48px;
+  --text-title-lg--line-height: 60px;
+  --text-title-md: 36px;
+  --text-title-md--line-height: 44px;
+  --text-title-sm: 30px;
+  --text-title-sm--line-height: 38px;
+  --text-theme-xl: 20px;
+  --text-theme-xl--line-height: 30px;
+  --text-theme-sm: 14px;
+  --text-theme-sm--line-height: 20px;
+  --text-theme-xs: 12px;
+  --text-theme-xs--line-height: 18px;
+
+  /* --- رنگ‌های پایه --- */
+  --color-current: currentColor;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+  --color-black: #101828;
+
+  /* --- رنگ‌های برند (Brand Colors) --- */
+  --color-brand-25: #f2f7ff;
+  --color-brand-50: #ecf3ff;
+  --color-brand-100: #dde9ff;
+  --color-brand-200: #c2d6ff;
+  --color-brand-300: #9cb9ff;
+  --color-brand-400: #7592ff;
+  --color-brand-500: #465fff;
+  --color-brand-600: #3641f5;
+  --color-brand-700: #2a31d8;
+  --color-brand-800: #252dae;
+  --color-brand-900: #262e89;
+  --color-brand-950: #161950;
+
+  /* --- رنگ‌های خاکستری (Gray Colors) --- */
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #e4e7ec;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #101828;
+  --color-gray-950: #0c111d;
+  --color-gray-dark: #1a2231;
+
+  /* --- رنگ‌های اختصاصی واتس‌اپ (طبق فایل اصلی) --- */
+  --color-whatsapp-primary: #25d366;
+  --color-whatsapp-secondary: #128c7e;
+  --color-whatsapp-dark: #075e54;
+  --color-whatsapp-light: #dcf8c6;
+  --color-whatsapp-bg-light: #f0f2f5;
+  --color-whatsapp-bg-dark: #0b141a;
+  --color-whatsapp-panel-dark: #202c33;
+  --color-whatsapp-accent: #34b7f1;
+
+  /* --- سایه‌ها --- */
+  --shadow-theme-md:
+    0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --shadow-theme-lg:
+    0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-theme-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-theme-xl:
+    0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  --shadow-focus-ring: 0px 0px 0px 4px rgba(70, 95, 255, 0.12);
+
+  /* --- Z-Index --- */
+  --z-index-1: 1;
+  --z-index-9: 9;
+  --z-index-99: 99;
+  --z-index-999: 999;
+
+  /* --- انیمیشن‌های اختصاصی لندینگ --- */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-blob: blob 7s infinite;
+  --animate-pulse-red: pulseRed 1.5s infinite;
+  --animate-shake: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  --animate-fade-in: fadeIn 0.3s ease-out forwards;
+  --animate-heartbeat: heartbeat 3s ease-in-out infinite;
+  --animate-subtle-glow: subtleGlow 3s ease-in-out infinite;
+  --animate-draw: draw 1s ease-out forwards;
+  --animate-grow-bar: growBar 1.5s ease-out forwards;
+  --animate-typing: typing 1.4s infinite ease-in-out both;
+
+  /* --- Keyframes --- */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  @keyframes pulseRed {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0) rotate(1deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0) rotate(-2deg);
+    }
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0) rotate(2deg);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    5% {
+      transform: scale(1.2);
+    }
+    10% {
+      transform: scale(1);
+    }
+    15% {
+      transform: scale(1.2);
+    }
+    20% {
+      transform: scale(1);
+    }
+  }
+  @keyframes subtleGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    }
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes growBar {
+    from {
+      height: 0%;
+    }
+  }
+  @keyframes typing {
+    0%,
+    80%,
+    100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+  body {
+    font-family: inherit;
+    @apply relative z-1 bg-gray-50 font-sans font-normal text-gray-800 dark:text-gray-100;
+  }
+}
+
+@layer utilities {
+  /* --- انیمیشن اسکرول --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- پس‌زمینه Grid --- */
+  .bg-grid-pattern {
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  .dark .bg-grid-pattern {
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+  }
+
+  /* --- افکت متن گرادینت --- */
+  .text-gradient-animate {
+    background: linear-gradient(to right, #25d366, #34b7f1, #25d366);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient-flow 3s linear infinite;
+  }
+  @keyframes gradient-flow {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* --- یوتیلیتی‌های موبایل سه‌بعدی --- */
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .typing-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* --- دکمه‌های iOS --- */
+  .ios-key {
+    @apply flex cursor-pointer items-center justify-center rounded-[5px] bg-white text-[14px] font-medium text-black transition-transform duration-75 active:scale-95 active:bg-[#e5e5e5];
+    box-shadow: 0 1px 0 #888;
+  }
+  .dark .ios-key {
+    @apply bg-[#6b6b6b] text-white active:bg-[#888];
+    box-shadow: 0 1px 0 #333;
+  }
+
+  .ios-call-btn {
+    @apply flex h-[60px] w-[60px] cursor-pointer items-center justify-center rounded-full bg-white/15 text-2xl text-white backdrop-blur-[10px] transition-colors duration-200 active:bg-white/30;
+  }
+
+  /* --- اسکرول بار سفارشی --- */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply size-1.5;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-200 dark:bg-gray-700;
+  }
+}
+
+/* Force Dark Scrollbar Global Style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #111b21;
+}
+::-webkit-scrollbar-thumb {
+  background: #25d366;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #128c7e;
+}
+
 /* یوتیلیتی‌های اختصاصی منو (استفاده شده در کامپوننت‌های پروژه) */
 @utility menu-item {
   @apply text-theme-sm relative flex w-full items-center gap-3 rounded-lg px-3 py-2 font-medium;
